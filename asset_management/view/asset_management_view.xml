@@ -1,0 +1,33 @@
+<odoo>
+     <menuitem name="Asset"
+                  id="menu_asset_management"
+                  groups="base.group_user"
+                  sequence="10"
+                  web_icon="asset_management,static/description/icon.png"/>
+
+     <menuitem name="Asset"
+                  id="menu_asset"
+                  parent="menu_asset_management"
+                  groups="base.group_user"
+                  sequence="1"/>
+
+     <record id="action_asset_management" model="ir.actions.act_window">
+            <field name="name">Asset Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">asset.management</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_asset_management"
+                  id="asset_management_menu"
+                  parent="menu_asset" sequence="18"/>
+
+
+</odoo>

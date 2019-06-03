@@ -1,0 +1,33 @@
+<odoo>
+     <menuitem name="Access"
+                  id="menu_access_control"
+                  groups="base.group_user"
+                  sequence="100"
+                  web_icon="access_control,static/description/icon.png"/>
+
+     <menuitem name="Access Control"
+                  id="menu_access"
+                  parent="menu_access_control"
+                  groups="base.group_user"
+                  sequence="1"/>
+
+     <record id="action_access_control" model="ir.actions.act_window">
+            <field name="name">Access Control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">access.control</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_access_control"
+                  id="access_control_menu"
+                  parent="menu_access" sequence="18"/>
+
+
+</odoo>

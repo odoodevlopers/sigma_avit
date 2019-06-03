@@ -1,0 +1,33 @@
+<odoo>
+     <menuitem name="Help Desk"
+                  id="menu_help_desk"
+                  groups="base.group_user"
+                  sequence="10"
+                  web_icon="help_desk,static/description/icon.png"/>
+
+     <menuitem name="Help_desk"
+                  id="menu_desk"
+                  parent="menu_help_desk"
+                  groups="base.group_user"
+                  sequence="1"/>
+
+     <record id="action_help_desk" model="ir.actions.act_window">
+            <field name="name">Help Desk</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">help.desk</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_help_desk"
+                  id="help_desk_menu"
+                  parent="menu_desk" sequence="18"/>
+
+
+</odoo>
